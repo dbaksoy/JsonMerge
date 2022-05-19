@@ -21,7 +21,7 @@ You will implement a `C++` library that implements functions to read and merge t
 
 ### JSON Merge Operation
 
-A JSON merge patch document (shortly Patch) describes changes to be made to a target JSON document (shortly Target) using a syntax that closely mimics the document being modified. Recipients of a merge patch document determine the exact set of changes being requested by comparing the content of the provided patch against the current content of the target document.
+A JSON merge patch document (shortly Patch) describes changes to be made to a target JSON document (shortly Target) using a syntax that closely mimics the document being modified. Recipients of a merge patch document determine the exact set of changes being requested by comparing the content of the provided patch against the current content of the target document. Check the standard documentation [here](https://www.rfc-editor.org/rfc/rfc7396.html).
 
 If the provided merge patch contains members that do not appear within the Target, those members are added.  If the Target does contain the member, the value is replaced. Null values in the merge patch are given special meaning to indicate the removal of existing values in the Target.
 
