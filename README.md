@@ -66,22 +66,21 @@ The resulting JSON document would be:
 ### Steps
 
 * Clone this repository 
+* Run `make` in the project directory. You would see one (dummy) test passes, the other fails as you didn't implement the desired functionality yet.
 * Implement the desired functionality in `include/bouncmpe/jsonmerge.hpp` and `src/jsonmerge.cpp` to:
     1. Read JSON files from the filesystem
     2. Merge JSON documents as explained
     3. Write the result as a JSON file
-* Write unit tests in `tests/jsonmerge.test.cpp` using `gtest`.
+* Write more unit tests in `tests/jsonmerge.test.cpp` using `gtest`.
 * Show us that you can develop high-quality C++ software.
 * Write what can be done for a better quality development in `TODO.md`. This is an open ended question.
-* Push your code back to the repo until the deadline.
+* Push your code back to your repo frquently as you develop.
 
 ### Evaluation Criteria
 
 0. Correctness
 1. Source code quality
 2. Test code quality
-3. Build process quality
-4. Other software engineering best practices
 
 ## General Suggestions
 
