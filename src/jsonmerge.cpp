@@ -18,7 +18,31 @@ auto jsonmerge(
     // For every object in the patch file iterates the function
     for (auto const &patch_member : patch.as_object())
       {
-        
+        // Defining key and values for objects
+        auto const &patch_member_key = patch_member.key();
+        auto const &patch_member_value = patch_member.value();
+        auto const &result_member_value = result.as_object()[patch_member_key];
+
+        // If both values are objects 
+        if (result_member_value.is_object() && patch_member_value.is_object())
+        {
+          // Recursive function to change the values of the target and continue to check inside whether there is an object, array or string
+          result.as_object()[patch_member_key] = jsonmerge(result_member_value, patch_member_value);
+
+        }
+        // If both values are arrays
+        else if (result_member_value.is_array() && patch_member_value.is_array())
+        {
+          // Recursive function to replace the array of target with patch array
+          result.as_object()[patch_member_key] = jsonmerge(result_member_value, patch_member_value);
+        }
+
+        // If values are not objects or arrays
+        else
+        {
+          
+        }
+
 
       }
   }
