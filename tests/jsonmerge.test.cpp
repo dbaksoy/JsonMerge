@@ -32,12 +32,10 @@ TEST(MyTests, Test3)
   boost::json::value patch = bouncmpe::parseJson("../../data/test1/document1.patch.json");
 
   boost::json::value merged = bouncmpe::jsonmerge(target, patch);
-  bouncmpe::jsonwrite(merged, "../../data/test1/document1.merged.json");
-
-  boost::json::value result = bouncmpe::parseJson("../../data/test1/document1.merged.json");
   boost::json::value expected = bouncmpe::parseJson("../../data/test1/document1.result.json");
 
-  EXPECT_EQ(result, expected);
+  bouncmpe::jsonwrite(merged, "../../data/test1/document1.merged.json");
+  EXPECT_EQ(merged, expected);
 }
 
 TEST(MyTests, Test4)
@@ -46,11 +44,9 @@ TEST(MyTests, Test4)
   boost::json::value patch = bouncmpe::parseJson("../../data/test2/document2.patch.json");
 
   boost::json::value merged = bouncmpe::jsonmerge(target, patch);
-  bouncmpe::jsonwrite(merged, "../../data/test2/document2.merged.json");
-
-  boost::json::value result = bouncmpe::parseJson("../../data/test2/document2.merged.json");
   boost::json::value expected = bouncmpe::parseJson("../../data/test2/document2.result.json");
-
-  EXPECT_EQ(result, expected);
+  
+  bouncmpe::jsonwrite(merged, "../../data/test2/document2.merged.json");
+  EXPECT_EQ(merged, expected);
 }
 // When is it a good time to stop writing more tests?
