@@ -55,7 +55,15 @@ auto jsonmerge(
 
       }
   }
-
+  // If the value of the patch is array
+  else if (patch.is_array())
+    {
+      //  Replace result value with patch value
+      if (result.as_array() != patch.as_array() && patch.as_array().size() > 0)
+      {
+        result.as_array() = patch.as_array();
+      }
+    }
   return result;
 }
 
