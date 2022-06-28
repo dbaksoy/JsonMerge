@@ -10,10 +10,19 @@ auto jsonmerge(
   boost::json::value const& target, boost::json::value const& patch)
   -> boost::json::value
 {
-  boost::json::value result = {};
+  // Since target is constant, result is equalized to target to make changes on it
+  boost::json::value result = target;
 
-  // Implement desired functionality here(JSON merge operation)
-  
+  // Controls if there is an object inside patch
+  if (patch.is_object()) {
+    // For every object in the patch file iterates the function
+    for (auto const &patch_member : patch.as_object())
+      {
+        
+
+      }
+  }
+
   return result;
 }
 
