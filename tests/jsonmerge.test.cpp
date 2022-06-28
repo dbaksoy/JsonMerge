@@ -32,7 +32,7 @@ TEST(MyTests, Test3)
   boost::json::value patch = bouncmpe::parseJson("../../data/document1.patch.json");
 
   boost::json::value merged = bouncmpe::jsonmerge(target, patch);
-  bouncmpe::jsonwrite(merged, "../../data/test1/document1.merged.json");
+  bouncmpe::jsonwrite(merged, "../../data/document1.merged.json");
 
   boost::json::value result = bouncmpe::parseJson("../../data/document1.merged.json");
   boost::json::value expected = bouncmpe::parseJson("../../data/document1.result.json");
