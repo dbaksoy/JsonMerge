@@ -43,12 +43,12 @@ auto jsonmerge(
           // If the value of the patch is not null, it changes the result value
           if (!patch_member_value.is_null())
           {
-            result.as_object()[patch_member_name] = patch_member_value;
+            result.as_object()[patch_member_key] = patch_member_value;
           }
           // If the value of the patch is null, deletes corresponding key of the result
           else
           {
-            result.as_object().erase(result.as_object().find(patch_member_name));
+            result.as_object().erase(result.as_object().find(patch_member_key));
           }
         }
 
