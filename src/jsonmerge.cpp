@@ -70,7 +70,6 @@ auto jsonmerge(
 // Implement the rest of the functionality and any other helpers if necessary
 
 // Parse two JSON files
-
 auto parseJson(std::string jsonFileName) -> boost::json::value
   {
     // Read from file
@@ -83,4 +82,13 @@ auto parseJson(std::string jsonFileName) -> boost::json::value
     auto parsed_data = boost::json::parse(stringjson);
     return parsed_data;
   }
+
+// Write a new JSON file with given name
+void jsonwrite(json::value result, string resultJsonFile)
+{
+    ofstream result_file(resultJsonFile);
+    result_file << result;
+    result_file.close();
+}
+
 }  // namespace bouncmpe

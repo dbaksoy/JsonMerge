@@ -13,6 +13,10 @@ auto jsonmerge(
 
 // Parse two JSON files and return JSON value
 auto parseJson(std::string jsonFileName) -> boost::json::value;
+
+// Write JSON to new file with given name
+void jsonwrite(boost::json::value result, std::string resultJsonFile);
+
 // Check data folder for some example files - you can use std::filesystem
 
 }  // namespace bouncmpe
