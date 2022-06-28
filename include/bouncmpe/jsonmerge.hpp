@@ -1,4 +1,7 @@
 #include <boost/json.hpp>
+#include <string>
+#include <fstream>
+#include <sstream>
 
 namespace bouncmpe {
 
