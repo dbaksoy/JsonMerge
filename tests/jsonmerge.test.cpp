@@ -50,3 +50,5 @@ TEST(MyTests, Test4)
   EXPECT_EQ(merged, expected);
 }
 // When is it a good time to stop writing more tests?
+
+// When our test covers all the possible cases we can stop testing.
