@@ -28,14 +28,28 @@ TEST(MyTests, Test2)
 
 TEST(MyTests, Test3)
 {
-  boost::json::value target = bouncmpe::parseJson("../../data/document1.json");
-  boost::json::value patch = bouncmpe::parseJson("../../data/document1.patch.json");
+  boost::json::value target = bouncmpe::parseJson("../../data/test1/document1.json");
+  boost::json::value patch = bouncmpe::parseJson("../../data/test1/document1.patch.json");
 
   boost::json::value merged = bouncmpe::jsonmerge(target, patch);
-  bouncmpe::jsonwrite(merged, "../../data/document1.merged.json");
+  bouncmpe::jsonwrite(merged, "../../data/test1/document1.merged.json");
 
-  boost::json::value result = bouncmpe::parseJson("../../data/document1.merged.json");
-  boost::json::value expected = bouncmpe::parseJson("../../data/document1.result.json");
+  boost::json::value result = bouncmpe::parseJson("../../data/test1/document1.merged.json");
+  boost::json::value expected = bouncmpe::parseJson("../../data/test1/document1.result.json");
+
+  EXPECT_EQ(result, expected);
+}
+
+TEST(MyTests, Test4)
+{
+  boost::json::value target = bouncmpe::parseJson("../../data/test2/document2.json");
+  boost::json::value patch = bouncmpe::parseJson("../../data/test2/document2.patch.json");
+
+  boost::json::value merged = bouncmpe::jsonmerge(target, patch);
+  bouncmpe::jsonwrite(merged, "../../data/test2/document2.merged.json");
+
+  boost::json::value result = bouncmpe::parseJson("../../data/test2/document2.merged.json");
+  boost::json::value expected = bouncmpe::parseJson("../../data/test2/document2.result.json");
 
   EXPECT_EQ(result, expected);
 }
