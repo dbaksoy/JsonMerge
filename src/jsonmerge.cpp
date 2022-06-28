@@ -84,9 +84,9 @@ auto parseJson(std::string jsonFileName) -> boost::json::value
   }
 
 // Write a new JSON file with given name
-void jsonwrite(json::value result, string resultJsonFile)
+void jsonwrite(boost::json::value result, std::string resultJsonFile)
 {
-    ofstream result_file(resultJsonFile);
+    std::ofstream result_file(resultJsonFile);
     result_file << result;
     result_file.close();
 }
