@@ -1,0 +1,12 @@
+{
+    "movies":{
+    "action":[{"resident evil":[1,2,3]},
+              {"pirates of the caribbean":["curse of the black pearl","dead man's chest","at world's end"]},                 
+               "john wick",
+               "bourne",
+               "fast and furious"
+              ],
+    "fantasy":"narnia diaries",
+    "sci-fi":{"matrix":["the matrix","the matrix reloaded","the matrix revolutions","the matrix resurrections"]}
+}
+}
