@@ -25,4 +25,18 @@ TEST(MyTests, Test2)
 }
 
 // Complete the test suite by writing more tests...
+
+TEST(MyTests, Test3)
+{
+  boost::json::value target = bouncmpe::parseJson("../../data/document1.json");
+  boost::json::value patch = bouncmpe::parseJson("../../data/document1.patch.json");
+
+  boost::json::value merged = bouncmpe::jsonmerge(target, patch);
+  bouncmpe::jsonwrite(merged, "../../data/test1/document1.merged.json");
+
+  boost::json::value result = bouncmpe::parseJson("../../data/document1.merged.json");
+  boost::json::value expected = bouncmpe::parseJson("../../data/document1.result.json");
+
+  EXPECT_EQ(result, expected);
+}
 // When is it a good time to stop writing more tests?
