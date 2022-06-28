@@ -26,21 +26,30 @@ auto jsonmerge(
         // If both values are objects 
         if (result_member_value.is_object() && patch_member_value.is_object())
         {
-          // Recursive function to change the values of the target and continue to check inside whether there is an object, array or string
+          // Recursive function to change the values of the result and continue to check inside whether there is an object, array or string
           result.as_object()[patch_member_key] = jsonmerge(result_member_value, patch_member_value);
 
         }
         // If both values are arrays
         else if (result_member_value.is_array() && patch_member_value.is_array())
         {
-          // Recursive function to replace the array of target with patch array
+          // Recursive function to replace the array of result with patch array
           result.as_object()[patch_member_key] = jsonmerge(result_member_value, patch_member_value);
         }
 
         // If values are not objects or arrays
         else
         {
-          
+          // If the value of the patch is not null, it changes the result value
+          if (!patch_member_value.is_null())
+          {
+            result.as_object()[patch_member_name] = patch_member_value;
+          }
+          // If the value of the patch is null, deletes corresponding key of the result
+          else
+          {
+            result.as_object().erase(result.as_object().find(patch_member_name));
+          }
         }
 
 
